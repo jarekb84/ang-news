@@ -1,16 +1,18 @@
+/* global app:true */
 'use strict';
 
-angular.module('angNewsApp', [
+var app = angular.module('angNewsApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ngRoute'
-])
-  .config(function ($routeProvider) {
+]);
+  
+app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/posts.html',
+        controller: 'PostsCtrl'
       })
       .otherwise({
         redirectTo: '/'
