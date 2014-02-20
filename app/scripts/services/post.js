@@ -45,7 +45,7 @@ app.factory('Post', function($firebase, FIREBASE_URL, User) {
         comment.postId = postId;
 
         posts.$child(postId).$child('comments').$add(comment).then(function (ref) {
-          user.$child('comments').$child(ref.name()).$set({id: ref.name, postId: postId});
+          user.$child('comments').$child(ref.name()).$set({id: ref.name(), postId: postId});
         });
       }
     },
